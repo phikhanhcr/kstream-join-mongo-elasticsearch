@@ -1,0 +1,47 @@
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/mongodb-source-connector-topics -d @reqs/kstream/mongodb-source-topic.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/mongodb-source-connector-topic-hashtags -d @reqs/kstream/mongodb-source-topic-hashtag.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/elasticsearch-sink-connector-topics -d @reqs/kstream/es-sink-topic.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/elasticsearch-sink-customer-1 -d @reqs/kstream/es-kstream-topic.json
+
+
+
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/elasticsearch-sink-connector-topic-hashtags -d @reqs/kstream/es-sink-topic-with-topic-hashtag.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/kstream/es-sink-topic-with-topic-hashtag.json
+
+
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/kstream/es-kstream-topic.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/kstream/es-sink-topic.json
+
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/kstream/mongodb-source-topic.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/kstream/mongodb-source-topic-hashtag.json
+
+
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/mongodb-source-users.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/mongodb-source-address.json
+
+
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json http://localhost:8083/connectors/ -d @reqs/connections/mongodb-source-users1.json
+
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/mongodb-source-users.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/mongodb-source-address.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/es-customer-sink.json
+curl -i -X POST -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/ -d @reqs/connections/es-customer1-sink.json
+
+
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/mongodb-source-connector-users1 -d @reqs/connections/mongodb-source-users1.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/mongodb-source-connector-users -d @reqs/connections/mongodb-source-users.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/mongodb-source-connector-addresses -d @reqs/connections/mongodb-source-addresses.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/elasticsearch-sink-customer -d @reqs/connections/es-customer-sink.json
+curl -i -X DELETE -H "Accept:application/json" -H  "Content-Type:application/json" http://localhost:8083/connectors/elasticsearch-sink-customer-1 -d @reqs/connections/es-customer1-sink.json
+
+
+mvn clean package -f aggregator/pom.xml
+
+https://github.com/debezium/debezium-examples/tree/main/kstreams-fk-join
+
+Cant not define each source connector with each signal collection.
+
+rm -rf kafka && rm -rf zookeeper && mkdir kafka && mkdir zookeeper && cd ./zookeeper && mkdir data && mkdir log && cd ..
+
+
+// nếu dùng riêng field signal
